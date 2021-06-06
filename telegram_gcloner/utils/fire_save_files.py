@@ -36,7 +36,7 @@ class MySaveFileThread(threading.Thread):
         chat_id = update.effective_chat.id
         user_id = update.effective_user.id
         gd = GoogleDrive(user_id)
-        message = '╭──────⌈ 📥 Copying ⌋──────╮\n│\n├ 📂 Target directory：{}\n'.format(dest_folder['path'])
+        message = '╭──────⌈ 📥 Syncing ⌋──────╮\n│\n├ 📂 เป้าหมาย ปลายทาง：{}\n'.format(dest_folder['path'])
         inline_keyboard = InlineKeyboardMarkup(
             [[InlineKeyboardButton(text=f'🚫 Stop', callback_data=f'stop_task,{thread_id}')]])
 
@@ -55,7 +55,7 @@ class MySaveFileThread(threading.Thread):
 
             command_line = [
                 config.PATH_TO_GCLONE,
-                'copy',
+                'sync',
                 '--drive-server-side-across-configs',
                 '-P',
                 '--stats',
@@ -153,12 +153,12 @@ class MySaveFileThread(threading.Thread):
                         progress_checked_files = int(match_checked_files.group(1))
                         progress_total_check_files = int(match_checked_files.group(2))
                     progress_max_percentage_10 = max(progress_size_percentage_10, progress_file_percentage_10)
-                    message_progress = '├ 🗂 Source : <a href="https://drive.google.com/open?id={}">{}</a>\n│\n' \
-                                       '├ ✔️ Checks： <code>{} / {}</code>\n' \
-                                       '├ 📥 Transfers： <code>{} / {}</code>\n' \
-                                       '├ 📦 Size：<code>{} / {}</code>\n{}' \
-                                       '├ ⚡️Speed：<code>{}</code> \n├⏳ ETA: <code>{}</code>\n' \
-                                       '├ ⛩ Progress：[<code>{}</code>] {: >4}%\n│\n' \
+                    message_progress = '├ 🗂 ไฟล์ต้นทาง : <a href="https://drive.google.com/open?id={}">{}</a>\n│\n' \
+                                       '├ ✔️ ตรวจสอบไฟล์ ： <code>{} / {}</code>\n' \
+                                       '├ 📥 คัดลอก ： <code>{} / {}</code>\n' \
+                                       '├ 📦 ขนาดไฟล์ทั้งหมด ：<code>{} / {}</code>\n{}' \
+                                       '├ ⚡️ความเร็ว ：<code>{}</code> \n├⏳ ETA: <code>{}</code>\n' \
+                                       '├ ⛩ ความคืบหน้า ：[<code>{}</code>] {: >4}%\n│\n' \
                                        '├──────⌈ ⚡️ CloneBot ⌋──────' \
                         .format(
                         folder_id,
@@ -264,7 +264,7 @@ class MySaveFileThread(threading.Thread):
             if self.critical_fault is True:
                 break
 
-        message += '\n╰──────⌈ ✅ Finished ! ⌋──────╯'
+        message += '\n╰──────⌈ ✅ ดำเนินการเรียบร้อย ! ⌋──────╯'
         try:
             context.bot.edit_message_text(chat_id=chat_id, message_id=message_id, text=message,
                                           parse_mode=ParseMode.HTML, disable_web_page_preview=True)
