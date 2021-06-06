@@ -29,7 +29,7 @@ Note : there are hidden features, check at the source code of the bot to find th
 ### ⚠ You need [service accounts (sa)](https://telegra.ph/How-to-create-and-use-service-accounts-sa-03-31) to use the bot
 <br/><br/>
 
-## ⚛️ Deploying on Heroku
+## ⚛️ Deploying on Heroku แสดงหน้าสรุปเป็นภาษาไทย)
 
  [🎬 Click me for the video tutorial](https://drive.google.com/file/d/1HniSEGUOptbZmHVXuOPULnzpyBBhgw3l/view?usp=sharing)
  
