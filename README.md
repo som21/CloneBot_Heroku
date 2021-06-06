@@ -29,11 +29,11 @@ Note : there are hidden features, check at the source code of the bot to find th
 ### ⚠ You need [service accounts (sa)](https://telegra.ph/How-to-create-and-use-service-accounts-sa-03-31) to use the bot
 <br/><br/>
 
-## ⚛️ Deploying on Heroku แสดงหน้าสรุปเป็นภาษาไทย)
+## ⚛️ Deploying on Heroku
 
  [🎬 Click me for the video tutorial](https://drive.google.com/file/d/1HniSEGUOptbZmHVXuOPULnzpyBBhgw3l/view?usp=sharing)
  
-1. Click on the button below :
+1. Click on the button below Version แสดงหน้าสรุปการทำงานเป็นภาษาไทย :
 <p><a href="https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2F&template=https://github.com/som21/CloneBot_Heroku"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" alt="Deploy to Heroku" /></a></p>
 
 
